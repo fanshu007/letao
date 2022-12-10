@@ -1,0 +1,73 @@
+// 导入base,common
+@import url(./base.less);
+
+
+// header
+#header {
+    #search-text {
+        width: 3rem;
+        margin: 0;
+        height: 0.35rem;
+        border-radius: 0.06rem;
+        color: #000;
+        font-size: 0.14rem;
+    }
+}
+
+// main
+#main {
+    position: relative;
+    height: 100%;
+    
+    .mui-fullscreen {
+        background-color: #ccc;
+        overflow: hidden;
+
+        .mui-col-xs-3 {
+            height: 100%;
+            padding-right: .1rem;
+            #segmentedControls {
+                height: 100%;
+            }
+
+            a {
+                width: 100%;
+                height: 0.45rem;
+                line-height: 0.45rem;
+                background-color: #fff;
+                color: #666;
+                font-size: .14rem;
+                &.mui-active {
+                    background-color: #ccc;
+                }
+            }
+        }
+
+        #segmentedControlContents {
+            height: 100%;
+            .mui-table-view {
+                background-color: #ccc;
+                li {
+                    padding: 0.1rem 0.1rem 0 0;
+                }
+                .mui-col-xs-4 {
+                    margin-bottom: .1rem;
+                    background-color: #fff;
+                    a {
+                        .flex();
+                        flex-direction: column;
+                        width: 100%;
+                        height: 0.68rem;
+                        color: #666;
+                        img {
+                            width: 100%;
+                        }
+                    }
+                }                
+            }
+
+
+
+        }
+    }
+}

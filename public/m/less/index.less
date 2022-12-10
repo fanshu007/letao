@@ -1,0 +1,117 @@
+// 导入base,common  每次base.less修改,导入base的分件 也要保存一下
+@import url(./base.less);
+
+// 通用颜色
+@cColor:#006699;
+// 声明通用函数
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// 2.main 
+#main {
+    position: relative;
+    height:100%;
+    // (1)轮播图
+    #slide {
+
+    }
+    
+    // (2)导航区
+    #nav {
+        padding: .1rem;
+        .mui-row {
+            a {
+                padding: 0;
+                img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+    // (3)广告区域
+    #banner {
+        padding: 0 .1rem;
+        a {
+            padding: 0;
+            img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        .mui-col-xs-4 {
+            img {
+                height: 2.4175rem;
+            }
+        }
+    }
+    // (4)品牌专区
+    #brand {
+        padding: .1rem;
+        a {
+            h2 {
+                margin: 0;
+            }
+            img {
+                width: 100%;
+            }
+        }
+    }
+    // (5)运动生活专区
+    #sport {
+        padding: 0.1rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        .mui-content {
+            background-color: #fff;
+            .mui-row {
+                .mui-col-xs-6 {
+                    padding-bottom: 0.1rem;
+                    &:nth-child(2) {
+                        border: 1px solid rgba(0, 0, 0, .05);
+                    }
+                }                
+            }
+
+            p {
+                line-height: 0.21rem;
+            }
+            p,button {
+                font-size: 0.14rem;
+            }
+            img {
+                width: 100%;
+            }  
+            .real-price {
+                margin: 0 0.03rem 0 0.02rem;
+            }             
+        }
+     
+    }
+    // (6)女士专区
+    #women {
+        padding: 0 .1rem;
+        margin-bottom: 1rem;
+        a {
+            img {
+                width: 100%;
+            }
+        }
+    }
+    // (7)男士专区
+    #men {
+        padding: 0 .1rem;
+        margin-bottom: 1rem;
+        a {
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+}
+
+

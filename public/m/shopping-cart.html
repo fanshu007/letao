@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐淘移动商城购物车</title>
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./less/shopping-cart.css">
+
+</head>
+<body>
+   <!-- 头部区域 -->
+   <header id="header">
+        <a href="#" class="left fa fa-arrow-left"></a>
+       <h1>购物车</h1>
+       <a href="#" id="search" class="right"><i class="fa fa-refresh"></i></a>
+   </header>
+   <main id="main">
+        <div class="mui-content">
+            <ul class="mui-table-view">
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+                        <div class="mui-media-object mui-pull-left">
+                            <img  src="./images/banner1.png">
+                            <div class="mui-input-row mui-checkbox">
+                                <input name="checkbox1" value="Item 1" type="checkbox">
+                              </div>
+                        </div>
+						
+						<div class="mui-media-body">
+                            <p class="sport-brand-intro">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</p>
+                            <p class="sport-brand-price">&yen;<span class="real-price">566.00</span><del>&yen;<span class="old-price">888.00</span></del></p>
+							<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="./images/banner2.png">
+						<div class="mui-media-body">
+							木屋
+							<p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
+						</div>
+					</a>
+				</li>
+				<li class="mui-table-view-cell mui-media">
+					<a href="javascript:;">
+						<img class="mui-media-object mui-pull-left" src="./images/banner3.png">
+						<div class="mui-media-body">
+							CBD
+							<p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
+						</div>
+					</a>
+				</li>
+
+			</ul>
+        </div>
+   </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-content">
+            <div class="mui-row">
+                <div class="mui-col-xs-3">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="index.html">
+                              <i class="fa fa-home"></i><span>首页</span>  
+                        </a>
+                    </li>
+                </div>
+                <div class="mui-col-xs-3">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="category.html">
+                              <i class="fa fa-navicon"></i><span>分类</span>  
+                        </a>
+                    </li>
+                </div>
+                <div class="mui-col-xs-3 index-current">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="shopping-cart.html">
+                              <i class="fa fa-shopping-cart"></i><span>购物车</span>  
+                        </a>
+                    </li>
+                </div>
+                <div class="mui-col-xs-3">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="user.html">
+                              <i class="fa fa-user"></i><span>个人中心</span>  
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./lib/mui/js/mui.min.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./js/shopping-cart.js"></script>
+</body>
+</html>
