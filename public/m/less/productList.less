@@ -1,0 +1,106 @@
+
+@import url(base.less);
+
+// #main主内容区
+#main {
+    position: relative;
+    height: 100%;
+    .mui-content {
+        background-color: #fff;
+    }
+    .mui-scroll {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .searh-header {
+        display: flex;
+        overflow: hidden;
+        margin: .1rem;
+        border: .01rem solid @cColor;
+        border-radius: 0.1rem;
+        input {
+            flex: 1;
+            margin: 0;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            font-size: .14rem;
+            text-align: left;
+            background-color: #fff;
+        }
+        button {
+            width: 0.6rem;
+            background-color: @cColor;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+    .search-content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .search-content-title {
+            margin-bottom: 0.05rem;
+            .mui-row {
+                background-color: #eee;
+                .mui-col-xs-3 {
+                    &.active {
+                        a {
+                            color: red;
+                        }
+                    }
+                }
+                .mui-table-view-cell {
+                    padding: 0.08rem 0.06rem;
+                    a {
+                        text-align: center;
+                        color: #666;
+                        .mui-icon {
+                            font-size: .14rem;
+                        }
+                    }                    
+                }
+
+            }
+        }
+        .search-content-list {
+            flex: 1;
+            .mui-content {
+                height: 100%;
+                background-color: #fff;
+                .mui-row {
+                    height: 100%;
+                }
+            }
+            .mui-table-view-cell {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 0;
+                margin: .05rem;
+                border: .01rem solid #ccc;
+                img {
+                    width: 100%;
+                }
+                .brand-intro {
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    overflow: hidden;
+                    -webkit-box-orient: vertical;
+                }
+                button {
+                    position: unset;
+                    transform: none;
+                    margin-bottom: .1rem;
+                }
+                p {
+                    font-size: .14rem;
+                    line-height: .21rem;
+                    margin-bottom: .1rem;
+                }
+                
+            }
+        }
+    }
+}

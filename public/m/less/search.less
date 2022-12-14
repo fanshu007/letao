@@ -1,0 +1,87 @@
+// 导入base和common
+
+@import url(base.less);
+
+// #main 
+#main {
+    display: flex;
+    flex-direction: column;
+    padding: .1rem;
+    height: 100%;
+    .search-head {
+        overflow: hidden;
+        border-radius: 0.1rem;
+        border: 1px solid @cColor;
+        margin-bottom: .2rem;
+        .mui-input-row {
+            display: flex;
+            height: auto;
+            input {
+                flex: 1;
+                height: auto;
+                padding: 0.06rem 0.15rem;
+                font-size: 0.14rem;
+            }
+            .mui-icon-clear {
+                right: 0.6rem;
+                top: 0.06rem;
+            }
+            .mui-btn {
+                width: 0.6rem;
+                height: 0.34rem;
+                font-size: 0.14rem;
+                line-height: 0.14rem;
+                border: none;
+                border-top-left-radius: 0; 
+                border-bottom-left-radius: 0;
+                color: #fff;
+                background-color: @cColor;
+            }  
+            &:after {
+                height: 0;
+            }          
+        }
+    }
+    .search-content {
+        position: relative;
+        flex: 1;
+        ul {
+            box-shadow: 0 0.005rem 0.01rem 0.01rem #ccc;
+            border-radius: 0.05rem;
+            margin: 0.01rem;
+            &:before,&:after {
+                height: 0;
+            }
+            li {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                height: 0.43rem;
+                a {
+                    &.fa-close {
+                        padding: 0.03rem 0.06rem;
+                        margin: 0;
+                        background-color: #ccc;
+                        border-radius: 0.1rem;
+                    }
+                }
+                &:after {
+                    left: 0;
+                }
+                &:first-child {
+                    font-weight: bold;
+                    a {
+                        color:#666;
+                        &:active {
+                            color: @cColor;
+                        }
+                    }
+                    &:after {
+                        height: 0.03rem;
+                    }
+                }
+            }
+         
+        }
+    }
+}

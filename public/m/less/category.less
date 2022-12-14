@@ -16,57 +16,66 @@
 
 // main
 #main {
-    position: relative;
+    display: flex;
     height: 100%;
-    
-    .mui-fullscreen {
+    .mui-backdrop {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        z-index: 998;
+        background-color: rgba(0,0,0,.3);
+    }
+    .category-left {
+        width: 0.8rem;
         background-color: #ccc;
-        overflow: hidden;
-
-        .mui-col-xs-3 {
+        .mui-scroll-wrapper {
+            position: relative;
             height: 100%;
-            padding-right: .1rem;
-            #segmentedControls {
-                height: 100%;
-            }
-
-            a {
-                width: 100%;
-                height: 0.45rem;
-                line-height: 0.45rem;
-                background-color: #fff;
-                color: #666;
-                font-size: .14rem;
-                &.mui-active {
-                    background-color: #ccc;
+            ul {
+                .mui-table-view-cell {
+                    color: #666;
+                    height: 0.43rem;
+                    line-height: 0.43rem;
+                    padding: 0;
+                    text-align: center;
+                    overflow: hidden;
+                    &:after {
+                        left: 0;
+                    }
+                    &.active {
+                        background-color: #ccc;
+                    }
                 }
             }
         }
-
-        #segmentedControlContents {
+    }
+    .category-right {
+        flex: 1;
+        background-color: #ccc;
+        .mui-scroll-wrapper {
+            position: relative;
             height: 100%;
-            .mui-table-view {
-                background-color: #ccc;
-                li {
-                    padding: 0.1rem 0.1rem 0 0;
-                }
-                .mui-col-xs-4 {
-                    margin-bottom: .1rem;
+            .mui-row {
+                padding: 0.1rem;
+                a {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    margin-bottom: 0.1rem;
                     background-color: #fff;
-                    a {
-                        .flex();
-                        flex-direction: column;
+                    color: #666;
+                    img {
                         width: 100%;
-                        height: 0.68rem;
-                        color: #666;
-                        img {
-                            width: 100%;
-                        }
+                    }
+                    span {
+                        line-height: 0.21rem;
                     }
                 }                
             }
-
-
 
         }
     }

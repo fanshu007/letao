@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name='viewport' content='width=device-width,initial-scale=1.0,user-scalable=no,minimum-scale=1.0,maximum-scale=1.0'>
+    <title>乐淘移动商城-产品搜索列表</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./lib/mui/css/mui.min.css">
+    <link rel="stylesheet" href="./lib/fontAwesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./less/productList.css">
+
+</head>
+<body>
+   <!-- 头部区域 -->
+   <header id="header">
+       <a href="#" class="left fa fa-arrow-left" id="back"></a>
+       <h1>商品列表</h1>
+       <a href="#"  class="right"></a>
+   </header>
+   <!-- 主内容区 -->
+   <main id="main">
+    <div id="refreshContainer" class="mui-content mui-scroll-wrapper">
+        <div class="mui-scroll">
+            <form action="" class="searh-header">
+                <input type="search" class="mui-input-clear" id="search-word" placeholder="请输入要搜索的商品" autocomplete="off">
+                <button type="button" id="iSearch" class="mui-btn mui-btn-primary">搜索</button>
+            </form>
+            <div class="search-content">
+                <div class="search-content-title">
+                    <div class="mui-row">
+                        <div class="mui-col-xs-3 launch-time active">
+                            <li class="mui-table-view-cell">
+                                <a class="mui-navigate">
+                                    上架时间<span class="mui-icon mui-icon-arrowdown"></span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="mui-col-xs-3 price">
+                            <li class="mui-table-view-cell">
+                                <a class="mui-navigate">
+                                    价格<span class="mui-icon mui-icon-arrowdown"></span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="mui-col-xs-3 sale-volume">
+                            <li class="mui-table-view-cell">
+                                <a class="mui-navigate">
+                                    销量<span class="mui-icon mui-icon-arrowdown"></span>
+                                </a>
+                            </li>
+                        </div>
+                        <div class="mui-col-xs-3 discount">
+                            <li class="mui-table-view-cell">
+                                <a class="mui-navigate">
+                                    折扣<span class="mui-icon mui-icon-arrowdown"></span>
+                                </a>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+                <div class="search-content-list">
+                    <div class="mui-content">
+                        <div class="mui-row">
+                            <div class="mui-col-xs-6">
+                                <li class="mui-table-view-cell">
+                                    <img src="./images/detail.jpg" alt="">
+                                    <p class="brand-intro">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                    <p class="price">
+                                        &yen; <span class="current-price">499.1</span>
+                                        <del class="past-price">&yen; <span>888.1</span></del>
+                                    </p>
+                                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+                                </li>
+                            </div>
+                            <!-- <div class="mui-col-xs-6">
+                                <li class="mui-table-view-cell">
+                                    <img src="./images/detail.jpg" alt="">
+                                    <p class="brand-intro">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                    <p class="price">
+                                        &yen;<span class="current-price">499.1</span>
+                                        <del class="past-price">&yen;<span>888.1</span></del>
+                                    </p>
+                                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+                                </li>
+                            </div>
+                            <div class="mui-col-xs-6">
+                                <li class="mui-table-view-cell">
+                                    <img src="./images/detail.jpg" alt="">
+                                    <p class="brand-intro">李宁闪击篮球鞋驭帅10镭射队尚4男韦德之道空袭中高帮队尚3.5球鞋</p>
+                                    <p class="price">
+                                        &yen;<span class="current-price">499.1</span>
+                                        <del class="past-price">&yen;<span>888.1</span></del>
+                                    </p>
+                                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+                                </li>
+                            </div> -->
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </div>
+
+   </main>
+    <!-- 底部区域 -->
+    <footer id="footer">
+        <div class="mui-content">
+            <div class="mui-row">
+                <div class="mui-col-xs-3">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="index.html">
+                              <i class="fa fa-home"></i><span>首页</span>  
+                        </a>
+                    </li>
+                </div>
+                <div class="mui-col-xs-3">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="category.html">
+                              <i class="fa fa-navicon"></i><span>分类</span>  
+                        </a>
+                    </li>
+                </div>
+                <div class="mui-col-xs-3">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="shopping-cart.html">
+                              <i class="fa fa-shopping-cart"></i><span>购物车</span>  
+                        </a>
+                    </li>
+                </div>
+                <div class="mui-col-xs-3">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="user.html">
+                              <i class="fa fa-user"></i><span>个人中心</span>  
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="./lib/mui/js/mui.min.js"></script>
+    <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+
+    <script id="tpl-xs-6" type="text/html">
+        {{ if list.length==0 }}
+            <p>当前商品没有库存了~~~</p>
+        {{ else }}
+            {{ each list value }}
+            <div class="mui-col-xs-6">
+                <li class="mui-table-view-cell">
+                    <img src="{{value.pic[0].picAddr}}" alt="">
+                    <p class="brand-intro">{{value.proName}}</p>
+                    <p class="price">
+                        &yen; <span class="current-price">{{value.price}}</span>
+                        <del class="past-price">&yen; <span>{{value.oldPrice}}</span></del>
+                    </p>
+                    <button type="button" class="mui-btn mui-btn-primary">立即购买</button>
+                </li>
+            </div>
+        {{ /each }}
+      {{ /if }}
+    </script>
+    <script src="./js/productList.js"></script>
+</body>
+</html>

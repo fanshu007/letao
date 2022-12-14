@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="p1">床前明月光,疑是地上霜.</p>
+
+    <script>
+        var p1 = document.getElementById('p1');
+
+        function tap(dom,callback) { 
+            var isMove = false;
+            dom.addEventListener('touchmove',function(){
+                isMove =true;
+            })
+            dom.addEventListener('touchend',function(){
+                if(!isMove){
+                    callback();
+                }
+                isMove=false;
+            })
+         }
+         p1.addEventListener('click',function(){
+            console.log('原生click事件');
+         })
+         tap(p1,function(){
+            console.log('tap事件');
+         })
+       
+        
+    </script>
+</body>
+</html>
