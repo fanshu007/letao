@@ -14,40 +14,72 @@
 <body>
    <!-- 头部区域 -->
    <header id="header">
-        <a href="#" class="left fa fa-arrow-left" id="back"></a>
+        <a href="javascript:history.back()" class="left fa fa-arrow-left" id="back"></a>
         <h1>登录中心</h1>
-        <a href="#" id="search" class="right fa fa-home"></a>
+        <a href="index.html" id="search" class="right fa fa-home"></a>
    </header>
    <main id="main">
-    <form class="mui-input-group">
+    <form class="mui-input-group" autocomplete="off">
         <div class="mui-input-row">
             <label>用户名</label>
-        <input type="text" class="mui-input-clear" placeholder="请输入用户名">
+        <input type="text" name="userName" class="mui-input-clear" placeholder="请输入用户名">
         </div>
         <div class="mui-input-row">
             <label>密码</label>
-            <input type="password" class="mui-input-password" placeholder="请输入密码">
+            <input type="password" name="password" class="mui-input-password mui-input-clear" placeholder="请输入密码">
         </div>
         <div class="mui-button-row">
-            <button type="button" class="mui-btn mui-btn-primary" >确认</button>
-            <button type="button" class="mui-btn mui-btn-danger" >取消</button>
+            <button type="button" class="mui-btn mui-btn-primary btn-login" >登录</button>
+            <button type="button" class="mui-btn mui-btn-danger btn-register" >免费注册</button>
         </div>
     </form>
+             <!-- 加载动画 -->
+             <div class="loading-box">
+                <canvas id="loading1" style="width:100%;padding:0;margin:0;display:block;">
+                </canvas> 
+            </div>
    </main>
 
 
     <!-- 底部区域 -->
     <footer id="footer">
-        <ul>
-            <li><a href="index.html"><i class="fa fa-home"></i><span>首页</span></a></li>
-            <li><a href="category.html"><i class="fa fa-navicon"></i><span>分类</span></a></li>
-            <li><a href="shopping-cart.html"><i class="fa fa-shopping-cart"></i><span>购物车</span></a></li>
-            <li ><a href="user.html"><i class="fa fa-user"></i><span>个人中心</span></a></li>
-        </ul>
+        <div class="mui-content">
+            <div class="mui-row">
+                <div class="mui-col-xs-3 ">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="index.html">
+                              <i class="fa fa-home"></i><span>首页</span>  
+                        </a>
+                    </li>
+                </div>
+                <div class="mui-col-xs-3">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="category.html">
+                              <i class="fa fa-navicon"></i><span>分类</span>  
+                        </a>
+                    </li>
+                </div>
+                <div class="mui-col-xs-3">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="shopping-cart.html">
+                              <i class="fa fa-shopping-cart"></i><span>购物车</span>  
+                        </a>
+                    </li>
+                </div>
+                <div class="mui-col-xs-3">
+                    <li class="mui-table-view-cell">
+                        <a class="" href="user.html">
+                              <i class="fa fa-user"></i><span>个人中心</span>  
+                        </a>
+                    </li>
+                </div>
+            </div>
+        </div>
     </footer>
 
     <script src="./lib/mui/js/mui.min.js"></script>
     <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./js/common.js"></script>
     <script src="./js/login.js"></script>
 </body>
 </html>

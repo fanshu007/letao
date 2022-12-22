@@ -18,5 +18,13 @@ $(window).on('load',function(){
     gallery.slider({
         interval:5000//自动轮播周期，若为0则不自动播放，默认为0；
     }); 
+    // loading动画
+    $('.loading-box').show();
+    
+    // 请求完成后hide隐藏加载中效果
+    setTimeout(function(){
+        $('.loading-box').hide();
+    },1000)
+    
     
 })

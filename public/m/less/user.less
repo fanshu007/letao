@@ -4,7 +4,49 @@
 // main
 #main {
     position: relative;
+    height: 100%;
+    .mui-pages {
+        height: 100%;
+        #setting {
+            height: 100%;
+            .mui-page-content {
+                height: 100%;
+            }
+        }
+    }
     .mui-scroll-wrapper {
-        overflow: unset;
+        ul {
+            li {
+                padding-right: 0.65rem;
+                padding: 0.11rem 0.15rem;
+                line-height: 0.21rem;
+                a {
+                    margin: -0.11rem -0.15rem;
+                    p {
+                        font-size: 0.14rem;
+                    }
+                }
+                &.logout {
+                    div {
+                        
+                        button {
+                            width: 100%;
+                            height: 100%;
+                            font-size: 0.14rem;
+                            padding: 0.06rem 0.12rem;
+                            border-radius: 0.03rem;
+                        }
+                    }
+                }
+                &:first-child {
+                    img {
+                        line-height: 0.42rem;
+                        max-width: 0.42rem;
+                        height: 0.42rem;
+                    }
+                }
+            }
+            
+        }
     }
 }

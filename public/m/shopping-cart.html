@@ -16,49 +16,70 @@
    <header id="header">
         <a href="#" class="left fa fa-arrow-left" id="back"></a>
        <h1>购物车</h1>
-       <a href="#" id="search" class="right"><i class="fa fa-refresh"></i></a>
+       <a href="javascript:location.reload()" id="search" class="right"><i class="fa fa-refresh"></i></a>
    </header>
+   <!-- 主区域 -->
    <main id="main">
-        <div class="mui-content">
-            <ul class="mui-table-view">
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-                        <div class="mui-media-object mui-pull-left">
-                            <img  src="./images/banner1.png">
-                            <div class="mui-input-row mui-checkbox">
-                                <input name="checkbox1" value="Item 1" type="checkbox">
-                              </div>
-                        </div>
-						
-						<div class="mui-media-body">
-                            <p class="sport-brand-intro">adidas阿迪达斯 男式 场下休闲篮球鞋S83700</p>
-                            <p class="sport-brand-price">&yen;<span class="real-price">566.00</span><del>&yen;<span class="old-price">888.00</span></del></p>
-							<p class="mui-ellipsis">能和心爱的人一起睡觉，是件幸福的事情；可是，打呼噜怎么办？</p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="./images/banner2.png">
-						<div class="mui-media-body">
-							木屋
-							<p class="mui-ellipsis">想要这样一间小木屋，夏天挫冰吃瓜，冬天围炉取暖.</p>
-						</div>
-					</a>
-				</li>
-				<li class="mui-table-view-cell mui-media">
-					<a href="javascript:;">
-						<img class="mui-media-object mui-pull-left" src="./images/banner3.png">
-						<div class="mui-media-body">
-							CBD
-							<p class="mui-ellipsis">烤炉模式的城，到黄昏，如同打翻的调色盘一般.</p>
-						</div>
-					</a>
-				</li>
+        <div id="refreshContainer" class="mui-scroll-wrapper">
+            <div class="mui-scroll">
+                <!--这里放置真实显示的DOM内容-->
+                <div class="mui-content">
+                    <ul class="mui-table-view mui-table-view-chevron">
+                        
+                        <!-- <li class="mui-table-view-cell mui-media mui-transitioning">
+                            <div class="mui-slider-right mui-disabled">
+                                <a class="mui-btn mui-btn-primary " class="edit-product" >编辑</a>
+                                <a class="mui-btn mui-btn-red " class="delete-product" >删除</a>
+                            </div>
+                            <div class="mui-slider-handle">
+                                <div class="mui-media-object mui-pull-left">
+                                    <img class="" src="./images/detail.jpg">
+                                    <div class="mui-input-row mui-checkbox mui-left">
+                                        <input name="checkbox" value="Item 1" type="checkbox">
+                                    </div>
+                                </div>
+                                <div class="mui-media-body ">
+                                    <p class="product-intro">床前明月光,疑是地上霜.举头望明月,低头思故乡.
+                                        床前明月光,疑是地上霜.举头望明月,低头思故乡.
+                                    </p>
+                                    <p class="product-price">
+                                        <span class="current-price">&yen;599.2</span>
+                                        <span class="old-price">&yen;777.1</span>
+                                    </p>
+                                    <p class="product-size">
+                                    鞋码:  <span class="selected-size">40</span>
+                                        <span class="selected-num">x5双</span>
+                                    </p>
+                                </div>
+                                <i class="pull-left mui-icon mui-icon-arrowright"></i>
+                            </div>
+                            
+                        </li> -->
+                    
+                    </ul>
+                </div>
+            </div>
+            <!-- 没数据时 -->
+            <div class="empty-content">
+                <img src="./images/loading.gif" alt="" >
+            </div>
 
-			</ul>
         </div>
+         <!-- 加载动画 -->
+         <div class="loading-box">
+             <canvas id="loading1" style="width:100%;padding:0;margin:0;display:block;">
+             </canvas> 
+         </div>
    </main>
+   <!-- 编辑时候的弹窗 -->
+   
+   <!-- 订单 -->
+   <section id="order">
+        <div class="total-amount">
+            订单总额: <span>&yen;<i>0.00</i></span>
+        </div>
+        <button type="button" id="myOrder" class="mui-btn mui-btn-danger">生成订单</button>
+   </section>
     <!-- 底部区域 -->
     <footer id="footer">
         <div class="mui-content">
@@ -97,6 +118,64 @@
 
     <script src="./lib/mui/js/mui.min.js"></script>
     <script src="./lib/zepto/zepto.min.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <!-- li模板 -->
+    <script id="tpl-li" type="text/html">
+        {{ each data value }}
+        <li class="mui-table-view-cell mui-media mui-transitioning">
+                 <div class="mui-slider-right mui-disabled">
+                     <a href="#popover" class="mui-btn mui-btn-primary edit-product" data-product="{{value}}" data-id="{{value.id}}">编辑</a>
+                     <a class="mui-btn mui-btn-red delete-product" data-id="{{value.id}}">删除</a>
+                 </div>
+                 <div class="mui-slider-handle">
+                     <div class="mui-media-object mui-pull-left">
+                         <img class="" src="{{value.pic[0].picAddr}}">
+                         <div class="mui-input-row mui-checkbox mui-left">
+                             <input name="checkbox" data-total-account="{{value.price*value.num}}" type="checkbox">
+                         </div>
+                     </div>
+                     <div class="mui-media-body ">
+                         <p class="product-intro">
+                             {{value.proName}}
+                         </p>
+                         <p class="product-price">
+                             <span class="current-price">&yen;{{value.price}}</span>
+                             <span class="old-price">&yen;{{value.oldPrice}}</span>
+                         </p>
+                         <p class="product-size">
+                            鞋码:  <span class="selected-size">{{value.size}}</span>
+                             <span class="selected-num">x{{value.num}}双</span>
+                         </p>
+                     </div>
+                     <i class="pull-left mui-icon mui-icon-arrowright"></i>
+                 </div>
+                        
+            </li>
+        {{ /each }}
+    </script>
+    <!-- popover模板 -->
+    <script id="tpl-popover" type="text/html">
+          <div class="mui-card">
+                <div class="mui-card-content">
+                    <div class="product-size">
+                        <span>尺寸 :</span>
+                        <% for(var i=miniSize;i <= maxSize ; i++){   %>
+                        <button type="button" class="mui-btn{{selectSize==i?' mui-btn-warning':''}} ">{{i}}</button>
+                        <% }%>
+                    </div>
+                    <div class="product-num">
+                        数量 :   
+                        <div class="mui-numbox"  data-numbox-min='0' data-numbox-max='{{totalNum}}'>
+                            <button class="mui-btn mui-numbox-btn-minus" type="button">-</button>
+                            <input class="mui-numbox-input" type="number" value="{{selectNum}}"/>
+                            <button class="mui-btn mui-numbox-btn-plus" type="button">+</button>
+                          </div>
+                          剩余: <span class="remain-num">{{totalNum}}</span> 件
+                    </div>
+                </div>
+            </div>
+    </script>
+    <script src="./js/common.js"></script>
     <script src="./js/shopping-cart.js"></script>
 </body>
 </html>

@@ -29,6 +29,9 @@ img {
   vertical-align: middle;
   outline: none;
 }
+i {
+  font-style: normal;
+}
 #header {
   position: fixed;
   top: 0px;
@@ -57,13 +60,38 @@ img {
   color: #fff;
   font-size: 0.14rem;
 }
+#main {
+  position: relative;
+}
+#main .mui-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 998;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#main .loading-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+}
 #footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 0.45rem;
   z-index: 99;
+  height: 0.45rem;
 }
 #footer .mui-content {
   background-color: #006699;
@@ -83,4 +111,215 @@ img {
 }
 #footer .mui-content a span {
   line-height: 0.16rem;
+}
+body {
+  padding-bottom: 0.8rem;
+}
+body .mui-popup {
+  width: 75%;
+}
+body .mui-popup .mui-popup-title {
+  font-size: 0.18rem;
+}
+body .mui-popup .mui-popup-button {
+  font-size: 0.17rem;
+  line-height: 0.44rem;
+  height: 0.44rem;
+}
+body .mui-popup .mui-card {
+  box-shadow: none;
+  background: none;
+  margin: 0;
+}
+body .mui-popup .mui-card-content {
+  padding-top: 0.1rem;
+  margin-bottom: 0.1rem;
+}
+body .mui-popup .mui-card-content button {
+  margin-bottom: 0.05rem;
+}
+body .mui-popup .mui-card-content .product-size {
+  line-height: 0.34rem;
+  margin-bottom: 0.1rem;
+  text-align: left;
+}
+body .mui-popup .mui-card-content .product-size button {
+  margin-bottom: 0.05rem;
+  font-size: 0.14rem;
+  padding: 0.06rem 0.12rem;
+}
+body .mui-popup .mui-card-content .product-size button:first-child {
+  margin-left: 0.1rem;
+}
+body .mui-popup .mui-card-content .product-size span {
+  font-size: 0.14rem;
+}
+body .mui-popup .mui-card-content .product-num {
+  font-size: 0.14rem;
+}
+body .mui-popup .mui-card-content .product-num .mui-numbox {
+  width: 1.2rem;
+  height: 0.35rem;
+  padding: 0 0.4rem;
+}
+body .mui-popup .mui-card-content .product-num .mui-numbox button {
+  width: 0.4rem;
+  font-size: 0.18rem;
+}
+body .mui-popup .mui-card-content .product-num .mui-numbox input {
+  font-size: 0.17rem;
+  line-height: 100%;
+}
+body .mui-popup .mui-card-content .product-num .mui-numbox .mui-numbox-btn-minus {
+  border-top-left-radius: 0.03rem;
+  border-bottom-left-radius: 0.03rem;
+}
+body .mui-popup .mui-card-content .product-num .mui-numbox .mui-numbox-btn-plus {
+  border-top-right-radius: 0.03rem;
+  border-bottom-right-radius: 0.03rem;
+}
+#main {
+  position: relative;
+  height: 100%;
+}
+#main #refreshContainer .empty-content {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#main #refreshContainer .empty-content img {
+  width: 100%;
+  border-radius: 50%;
+}
+#main #refreshContainer .mui-pull-top-pocket {
+  height: 0.5rem;
+}
+#main #refreshContainer .mui-pull-top-pocket .mui-pull {
+  bottom: 0.1rem;
+  line-height: 0.21rem;
+}
+#main #refreshContainer .mui-pull-top-pocket .mui-pull .mui-pull-loading {
+  font-size: 0.24rem;
+  margin-right: 0.1rem;
+}
+#main #refreshContainer .mui-pull-top-pocket .mui-pull .mui-pull-caption {
+  font-size: 0.15rem;
+  line-height: 0.24rem;
+}
+#main #refreshContainer .mui-pull-bottom-pocket {
+  height: 0.4rem;
+  line-height: 0.21rem;
+}
+#main #refreshContainer .mui-pull-bottom-pocket .mui-pull {
+  bottom: 0.1rem;
+}
+#main #refreshContainer .mui-pull-bottom-pocket .mui-pull .mui-pull-loading {
+  font-size: 0.24rem;
+  margin-right: 0.1rem;
+  width: 0.24rem;
+  height: 0.24rem;
+}
+#main #refreshContainer .mui-pull-bottom-pocket .mui-pull .mui-pull-caption {
+  font-size: 0.15rem;
+  line-height: 0.24rem;
+}
+#main #refreshContainer .mui-table-view {
+  margin-top: 0;
+}
+#main #refreshContainer .mui-table-view li {
+  padding: 0.11rem 0.15rem;
+}
+#main #refreshContainer .mui-table-view li .mui-slider-handle .pull-left {
+  position: absolute;
+  top: 50%;
+  right: -0.15rem;
+  margin-top: -0.07rem;
+  font-size: 0.14rem;
+  color: #bbb;
+}
+#main #refreshContainer .mui-table-view .mui-slider-right a {
+  font-size: 0.14rem;
+  padding: 0 0.3rem;
+}
+#main #refreshContainer .mui-table-view .mui-slider-right .edit-product {
+  transform: translate(0rem, 0rem);
+}
+#main #refreshContainer .mui-table-view .mui-slider-right .delete-product {
+  transform: translate(-0.88rem, 0rem);
+}
+#main #refreshContainer .mui-table-view .mui-pull-left {
+  max-width: 0.8rem;
+  height: auto;
+  line-height: auto;
+  margin-right: 0;
+}
+#main #refreshContainer .mui-table-view .mui-pull-left img {
+  width: 100%;
+}
+#main #refreshContainer .mui-table-view .mui-pull-left .mui-left {
+  overflow: unset;
+  text-align: center;
+  line-height: 0.26rem;
+}
+#main #refreshContainer .mui-table-view .mui-pull-left .mui-left input {
+  position: static;
+}
+#main #refreshContainer .mui-table-view .mui-pull-left .mui-left input:before {
+  color: deeppink;
+  font-size: 0.2rem;
+}
+#main #refreshContainer .mui-table-view .mui-media-body {
+  line-height: 0.21rem;
+}
+#main #refreshContainer .mui-table-view .mui-media-body p {
+  font-size: 0.14rem;
+}
+#main #refreshContainer .mui-table-view .mui-media-body .product-intro {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 0.05rem;
+  color: #666;
+}
+#main #refreshContainer .mui-table-view .mui-media-body .product-price {
+  margin-bottom: 0.15rem;
+}
+#main #refreshContainer .mui-table-view .mui-media-body .product-price .current-price {
+  font-weight: bold;
+  color: red;
+}
+#main #refreshContainer .mui-table-view .mui-media-body .product-size {
+  color: black;
+}
+#main #refreshContainer .mui-table-view .mui-media-body .product-size .selected-size {
+  margin-left: 0.05rem;
+}
+#main #refreshContainer .mui-table-view .mui-media-body .product-size .selected-num {
+  float: right;
+}
+#order {
+  position: fixed;
+  left: 0;
+  bottom: 0.45rem;
+  width: 100%;
+  background-color: pink;
+  height: 0.35rem;
+  line-height: 0.35rem;
+  font-weight: bold;
+}
+#order .total-amount {
+  float: left;
+  margin-left: 0.15rem;
+  color: red;
+}
+#order .total-amount span {
+  margin-left: 0.1rem;
+}
+#order #myOrder {
+  float: right;
+  height: 100%;
+  font-size: 0.14rem;
 }

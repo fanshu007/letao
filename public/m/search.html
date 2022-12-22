@@ -20,9 +20,9 @@
    </header>
    <main id="main">
         <div class="search-head">
-            <form class="mui-input-group">
+            <form class="mui-input-group" action="/m/productList.html" autocomplete="off">
                 <div class="mui-input-row">
-                    <input type="text" class="mui-input-clear" placeholder="请输入要搜索的商品">
+                    <input type="text" class="mui-input-clear" placeholder="请输入要搜索的商品" name="keyword">
                     <button type="button" class="mui-btn" id="iSearch">搜索</button>
                 </div>
             </form>        
@@ -30,6 +30,7 @@
         <div class="search-content">
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
+                    <!-- 这里用mui卡片视图比较好 -->
                     <ul class="mui-table-view">
                         <li class="mui-table-view-cell" id="search-head">
                             <span class="search-text">搜索历史</span>
@@ -45,7 +46,11 @@
             </div>
 
         </div>
-
+                 <!-- 加载动画 -->
+                 <div class="loading-box">
+                    <canvas id="loading1" style="width:100%;padding:0;margin:0;display:block;">
+                    </canvas> 
+                </div>
     
    </main>
     <!-- 底部区域 -->
@@ -104,6 +109,7 @@
             {{ /each }}
         {{ /if }}
     </script>
+    <script src="./js/common.js"></script>
     <script src="./js/search.js"></script>
 </body>
 </html>

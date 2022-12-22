@@ -1,6 +1,15 @@
 
 $(document).ready(function(){
 
+    
+    // 请求之前show显示加载中效果 
+    $('.loading-box').show();
+
+    // 请求完成后hide隐藏加载中效果
+    setTimeout(function(){
+        $('.loading-box').hide();
+    },1000)
+
     var searchArr = localStorage.getItem('searchArr')===null ? [] : JSON.parse(localStorage.getItem('searchArr') )  ; 
     showSearchList(searchArr);
     $('.mui-input-clear').trigger('focus');
@@ -16,6 +25,7 @@ $(document).ready(function(){
     });    
     // [Event]: 点击'搜索'按钮
     $('#iSearch').on('tap',function(){
+        // 如果是submit 无法阻止空值请求跳转,无法将关键词存入本地存储
         var searchText = $.trim($('.search-head input').val());
         if(!searchText)return;
         searchForward(searchText);
@@ -29,6 +39,7 @@ $(document).ready(function(){
 
     // 【Event】: 点击'X'删除--本条记录
     $('.search-content ul').on('tap','.clear-history',function(){
+        // 绑定index,会更容易找到索引
         var thisHistory = this.previousElementSibling.innerText ;
         var index = searchArr.indexOf(thisHistory);
         searchArr.splice(index,1);
@@ -36,11 +47,11 @@ $(document).ready(function(){
         showSearchList(searchArr);
         return false;
     })
-    // [Event]: 点击删除--所有记录
+    // [Event]: 点击--删除所有记录
     $('.search-content').on('tap','#clear-all-history',function(){
         searchArr=[];
         // localStorage.setItem('searchArr','[]');
-        localStorage.removeItem('searchArr');
+        localStorage.removeItem('searchArr'); //clear会清空所有的键值对
         showSearchList(searchArr);
     })
     // 点击li 监听 触发搜索功能
@@ -64,7 +75,7 @@ $(document).ready(function(){
         $('.search-content ul').html(html);         
     }
 
-    // [Function]: 搜索跳转
+    // [Function]: 搜索跳转到产品页面
     function searchForward(text) {
         var tempArr = searchArr.filter(function(value){
             return value !== text;
@@ -75,18 +86,21 @@ $(document).ready(function(){
         showSearchList(searchArr);
         // 清空输入框
         $('.search-head input').val('');
-        location.assign('http://localhost:3000/m/productList.html?keywords='+text);
+        // 服务器修改了根目录就可能受到影响
+        // location.assign('/m/productList.html?keywords='+text);
+        // js放在search.html里面,所以和其他html是同级....加一个不一样的参数 避免浏览器读取缓存信息
+        location = 'productList.html?keyword='+text+'&timestamp='+new Date().getTime();
     }
     // [Function]: 数组翻转
-    function reverseArr(arr){
-        for(var i=0;i<arr.length/2;i++){
-            var temp = arr[i];
-            arr[i]=arr[arr.length-1-i];
-            arr[arr.length-1-i] = temp;
-        }
-        return arr;
-    }
-
+    // function reverseArr(arr){
+    //     for(var i=0;i<arr.length/2;i++){
+    //         var temp = arr[i];
+    //         arr[i]=arr[arr.length-1-i];
+    //         arr[arr.length-1-i] = temp;
+    //     }
+    //     return arr;
+    // }
+    
     
 
 })

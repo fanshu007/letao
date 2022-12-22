@@ -5,38 +5,54 @@
 #main {
     position: relative;
     height: 100%;
+    #refreshContainer {
+        .mui-scroll {
+            .mui-table-view {
+                &:before,&:after {
+                    height: 0;
+                }
+            }
+        }
+    }
     .mui-content {
         background-color: #fff;
     }
-    .mui-scroll {
-        display: flex;
-        flex-direction: column;
-        height: 100%;
-    }
     .searh-header {
-        display: flex;
-        overflow: hidden;
-        margin: .1rem;
-        border: .01rem solid @cColor;
+        // overflow: hidden;
+        padding: .1rem;
         border-radius: 0.1rem;
-        input {
-            flex: 1;
-            margin: 0;
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-            font-size: .14rem;
-            text-align: left;
-            background-color: #fff;
+        .mui-input-row {
+            display: flex;
+            input {
+                flex: 1;
+                margin: 0;
+                height: .34rem;
+                line-height: 0.34rem;
+                border-radius: 0.05rem;
+                border-top-right-radius: 0;
+                border-bottom-right-radius: 0;
+                font-size: .14rem;
+                text-align: left;
+                background-color: #fff;
+                border: .01rem solid @cColor;
+            }
+            .mui-icon-clear {
+                top: .07rem;
+                right: .6rem;
+            }
+            button {
+                width: 0.6rem;
+                height: 0.34rem;
+                background-color: @cColor;
+                border-radius: .05rem;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
+                border: none;
+            }            
         }
-        button {
-            width: 0.6rem;
-            background-color: @cColor;
-            border-top-left-radius: 0;
-            border-bottom-left-radius: 0;
-        }
+
     }
     .search-content {
-        flex: 1;
         display: flex;
         flex-direction: column;
         .search-content-title {
@@ -53,6 +69,7 @@
                 .mui-table-view-cell {
                     padding: 0.08rem 0.06rem;
                     a {
+                        margin-right: -0.15rem;
                         text-align: center;
                         color: #666;
                         .mui-icon {
@@ -65,7 +82,7 @@
         }
         .search-content-list {
             flex: 1;
-            .mui-content {
+            >.mui-content {
                 height: 100%;
                 background-color: #fff;
                 .mui-row {
@@ -88,11 +105,17 @@
                     -webkit-line-clamp: 2;
                     overflow: hidden;
                     -webkit-box-orient: vertical;
+                    // 根据line-height写死高度 控制2行, 但是没有省略号
+                    // height:0.42rem; 
+                    // overflow: hidden;
+                    // text-overflow: ellipsis;
                 }
                 button {
                     position: unset;
                     transform: none;
                     margin-bottom: .1rem;
+                    font-size: .14rem;
+                    padding: 0.06rem 0.12rem;
                 }
                 p {
                     font-size: .14rem;

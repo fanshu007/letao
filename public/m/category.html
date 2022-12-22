@@ -21,23 +21,18 @@
         <a href="search.html" id="search" class="right fa fa-search"></a>
     </header>
     <main id="main">
-        <!-- mask -->
-        <div class="mui-backdrop"> </div>
+        <!-- 加载动画 -->
+        <div class="loading-box">
+            <canvas id="loading1" style="width:100%;padding:0;margin:0;display:block;">
+            </canvas> 
+        </div>
         <div class="category-left">
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
                     <div class="mui-row">
                         <ul class="mui-table-view">
                             <!-- <li class="mui-table-view-cell">Item 1</li>
-                            <li class="mui-table-view-cell">Item 2</li>
-                            <li class="mui-table-view-cell">Item 3</li>
-                            <li class="mui-table-view-cell">Item 1</li>
-                            <li class="mui-table-view-cell">Item 2</li>
-                            <li class="mui-table-view-cell">Item 3</li>
-                            <li class="mui-table-view-cell">Item 1</li>
-                            <li class="mui-table-view-cell">Item 2</li>
-                            <li class="mui-table-view-cell">Item 3</li>
-                            <li class="mui-table-view-cell">Item 1</li> -->
+                            <li class="mui-table-view-cell">Item 2</li> -->
                         </ul>
                     </div>
                 </div>
@@ -47,12 +42,12 @@
             <div class="mui-scroll-wrapper">
                 <div class="mui-scroll">
                     <div class="mui-row">
-                        <div class="mui-col-xs-4">
+                        <!-- <div class="mui-col-xs-4">
                              <a href="#">
-                                    <img src="./images/brand1.png" alt="">
+                                    <img src="./images/loading.gif" alt="">
                                     <span class="banner-name">匡威</span>
                                </a>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -122,9 +117,7 @@
        {{ /if }}
     </script>
 
-    <!-- <script src="./lib/zepto/fx.js"></script>
-    <script src="./lib/zepto/selector.js"></script>
-    <script src="./lib/zepto/touch.js"></script> -->
+    <script src="./js/common.js"></script>
     <script src="./js/category.js"></script>
 </body>
 

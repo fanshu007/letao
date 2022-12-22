@@ -29,6 +29,9 @@ img {
   vertical-align: middle;
   outline: none;
 }
+i {
+  font-style: normal;
+}
 #header {
   position: fixed;
   top: 0px;
@@ -56,6 +59,31 @@ img {
   text-align: center;
   color: #fff;
   font-size: 0.14rem;
+}
+#main {
+  position: relative;
+}
+#main .mui-backdrop {
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 998;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+#main .loading-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
 }
 #footer {
   position: fixed;
@@ -88,38 +116,47 @@ img {
   position: relative;
   height: 100%;
 }
+#main #refreshContainer .mui-scroll .mui-table-view:before,
+#main #refreshContainer .mui-scroll .mui-table-view:after {
+  height: 0;
+}
 #main .mui-content {
   background-color: #fff;
 }
-#main .mui-scroll {
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
 #main .searh-header {
-  display: flex;
-  overflow: hidden;
-  margin: 0.1rem;
-  border: 0.01rem solid #006699;
+  padding: 0.1rem;
   border-radius: 0.1rem;
 }
-#main .searh-header input {
+#main .searh-header .mui-input-row {
+  display: flex;
+}
+#main .searh-header .mui-input-row input {
   flex: 1;
   margin: 0;
+  height: 0.34rem;
+  line-height: 0.34rem;
+  border-radius: 0.05rem;
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   font-size: 0.14rem;
   text-align: left;
   background-color: #fff;
+  border: 0.01rem solid #006699;
 }
-#main .searh-header button {
+#main .searh-header .mui-input-row .mui-icon-clear {
+  top: 0.07rem;
+  right: 0.6rem;
+}
+#main .searh-header .mui-input-row button {
   width: 0.6rem;
+  height: 0.34rem;
   background-color: #006699;
+  border-radius: 0.05rem;
   border-top-left-radius: 0;
   border-bottom-left-radius: 0;
+  border: none;
 }
 #main .search-content {
-  flex: 1;
   display: flex;
   flex-direction: column;
 }
@@ -136,6 +173,7 @@ img {
   padding: 0.08rem 0.06rem;
 }
 #main .search-content .search-content-title .mui-row .mui-table-view-cell a {
+  margin-right: -0.15rem;
   text-align: center;
   color: #666;
 }
@@ -145,11 +183,11 @@ img {
 #main .search-content .search-content-list {
   flex: 1;
 }
-#main .search-content .search-content-list .mui-content {
+#main .search-content .search-content-list > .mui-content {
   height: 100%;
   background-color: #fff;
 }
-#main .search-content .search-content-list .mui-content .mui-row {
+#main .search-content .search-content-list > .mui-content .mui-row {
   height: 100%;
 }
 #main .search-content .search-content-list .mui-table-view-cell {
@@ -174,6 +212,8 @@ img {
   position: unset;
   transform: none;
   margin-bottom: 0.1rem;
+  font-size: 0.14rem;
+  padding: 0.06rem 0.12rem;
 }
 #main .search-content .search-content-list .mui-table-view-cell p {
   font-size: 0.14rem;

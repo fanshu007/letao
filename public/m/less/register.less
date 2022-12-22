@@ -1,0 +1,81 @@
+@import url(base.less);
+
+// main主内容区
+#main {
+    position: relative;
+    height: 100%;
+    .mui-input-group {
+        .mui-input-row {
+            height: 0.4rem;
+            line-height: 0.4rem;
+            &:nth-child(5) {
+                position: relative;
+                input {
+                    float: left;
+                }
+                .mui-icon-clear {
+                    top: 0.1rem;
+                    right: 35%;
+                    width: 0.38rem;
+                    height: 0.38rem;
+                    font-size: 0.2rem;
+                }
+                .mask {
+                    display: none;
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    width: 35%;
+                    height: 100%;
+                    z-index: 1;
+                }
+            }
+            
+            &:last-child {
+                height: 0.48rem;
+                padding: .05rem;
+                button {
+                    float: none;
+                    width: 100%;
+                    padding: .1rem 0;
+                    font-size: 0.14rem;
+                    border-radius: 0.03rem;
+
+                }
+            }
+        }
+        input {
+            font-size: .14rem;
+            height: 0.4rem;
+        }
+        input[name='vCode'] {
+            width: 30%;
+        }
+        label {
+            padding: 0.11rem 0.15rem;
+            line-height: 0.18rem;
+        }
+        .btn-get-verify {
+            width: 35%;
+            margin-top: .01rem;
+            font-size: 0.14rem;
+            padding: 0.1rem 0.15rem;
+            border-radius: 0.03rem;
+            border-width: 0.01rem;
+            &.disabled {
+                background-color: #999;
+                border: 1px solid #999;
+            }
+        }
+        .mui-icon-eye {
+            top: 0.1rem;
+            font-size: 0.2rem;
+            width: 0.38rem;
+            height: 0.38rem;
+        }
+    }
+
+
+
+}

@@ -1,5 +1,40 @@
 
-// header 
-#header {
+@import url(base.less);
+
+// main 
+#main {
     
+    .mui-input-group {
+        >div {
+            height: 0.4rem;
+            label,input {
+                height: 100%;
+            }
+            label {
+                padding: .11rem .15rem;
+                line-height: 0.18rem;
+            }
+            .mui-icon-eye {
+                font-size: 0.2rem;
+            }
+            &:last-child {
+                height: 0.45rem;
+                button {
+                    font-size: .14rem;
+                    padding: 0.06rem 0.12rem;
+
+                }
+            }
+        }
+        input {
+            font-size: .14rem;
+        }
+        .mui-icon-clear {
+            font-size: 0.2rem;
+            top: 0.1rem;
+            width: 0.38rem;
+            height: 0.38rem;
+            right: 0.38rem;
+        }
+    }
 }

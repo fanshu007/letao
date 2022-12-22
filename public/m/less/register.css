@@ -112,63 +112,74 @@ i {
 #footer .mui-content a span {
   line-height: 0.16rem;
 }
-#header #search-text {
-  width: 3rem;
-  margin: 0;
-  height: 0.35rem;
-  border-radius: 0.06rem;
-  color: #000;
-  font-size: 0.14rem;
-}
 #main {
-  display: flex;
-  height: 100%;
-}
-#main .category-left {
-  width: 0.8rem;
-  background-color: #ccc;
-}
-#main .category-left .mui-scroll-wrapper {
   position: relative;
   height: 100%;
 }
-#main .category-left .mui-scroll-wrapper ul .mui-table-view-cell {
-  color: #666;
-  height: 0.43rem;
-  line-height: 0.43rem;
-  padding: 0;
-  text-align: center;
-  overflow: hidden;
+#main .mui-input-group .mui-input-row {
+  height: 0.4rem;
+  line-height: 0.4rem;
 }
-#main .category-left .mui-scroll-wrapper ul .mui-table-view-cell:after {
-  left: 0;
-}
-#main .category-left .mui-scroll-wrapper ul .mui-table-view-cell.active {
-  background-color: #ccc;
-}
-#main .category-right {
-  flex: 1;
-  background-color: #ccc;
-}
-#main .category-right .mui-scroll-wrapper {
+#main .mui-input-group .mui-input-row:nth-child(5) {
   position: relative;
+}
+#main .mui-input-group .mui-input-row:nth-child(5) input {
+  float: left;
+}
+#main .mui-input-group .mui-input-row:nth-child(5) .mui-icon-clear {
+  top: 0.1rem;
+  right: 35%;
+  width: 0.38rem;
+  height: 0.38rem;
+  font-size: 0.2rem;
+}
+#main .mui-input-group .mui-input-row:nth-child(5) .mask {
+  display: none;
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 35%;
   height: 100%;
+  z-index: 1;
 }
-#main .category-right .mui-scroll-wrapper .mui-row {
-  padding: 0.1rem;
+#main .mui-input-group .mui-input-row:last-child {
+  height: 0.48rem;
+  padding: 0.05rem;
 }
-#main .category-right .mui-scroll-wrapper .mui-row a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 0.1rem;
-  background-color: #fff;
-  color: #666;
-}
-#main .category-right .mui-scroll-wrapper .mui-row a img {
+#main .mui-input-group .mui-input-row:last-child button {
+  float: none;
   width: 100%;
+  padding: 0.1rem 0;
+  font-size: 0.14rem;
+  border-radius: 0.03rem;
 }
-#main .category-right .mui-scroll-wrapper .mui-row a span {
-  line-height: 0.21rem;
+#main .mui-input-group input {
+  font-size: 0.14rem;
+  height: 0.4rem;
+}
+#main .mui-input-group input[name='vCode'] {
+  width: 30%;
+}
+#main .mui-input-group label {
+  padding: 0.11rem 0.15rem;
+  line-height: 0.18rem;
+}
+#main .mui-input-group .btn-get-verify {
+  width: 35%;
+  margin-top: 0.01rem;
+  font-size: 0.14rem;
+  padding: 0.1rem 0.15rem;
+  border-radius: 0.03rem;
+  border-width: 0.01rem;
+}
+#main .mui-input-group .btn-get-verify.disabled {
+  background-color: #999;
+  border: 1px solid #999;
+}
+#main .mui-input-group .mui-icon-eye {
+  top: 0.1rem;
+  font-size: 0.2rem;
+  width: 0.38rem;
+  height: 0.38rem;
 }
