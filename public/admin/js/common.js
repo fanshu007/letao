@@ -33,6 +33,20 @@ function initPagination(callback){
         }
     });  
 }
+
+// 监听页面加载/ajax请求
+NProgress.start();
+$(window).load(function(){
+    NProgress.done();
+})
+$(window).ajaxStart(function(){
+    NProgress.start();
+})
+$(window).ajaxStop(function(){
+    NProgress.done();
+})
+
+
 // window.initPagination = initPagination ;
 
 // })
