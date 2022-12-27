@@ -1,5 +1,13 @@
 $(document).ready(function () {
 
+    
+    // 请求之前show显示加载中效果 
+    $('.loading-box').show();
+
+    // 请求完成后hide隐藏加载中效果
+    setTimeout(function(){
+        $('.loading-box').hide();
+    },1000);
     // 手机号码,用户名,密码的简单正则对象
     var phonePattern = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/;
     var userNamePattern = /^[a-zA-Z0-9_]{6,16}$/;

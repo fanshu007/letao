@@ -116,9 +116,26 @@ i {
   position: relative;
   height: 100%;
 }
-#main #refreshContainer .mui-scroll .mui-table-view:before,
-#main #refreshContainer .mui-scroll .mui-table-view:after {
-  height: 0;
+#main #refreshContainer .mui-pull-top-pocket,
+#main #refreshContainer .mui-pull-bottom-pocket {
+  height: 0.5rem;
+}
+#main #refreshContainer .mui-pull-top-pocket .mui-pull,
+#main #refreshContainer .mui-pull-bottom-pocket .mui-pull {
+  bottom: 0.1rem;
+}
+#main #refreshContainer .mui-pull-top-pocket .mui-pull .mui-pull-caption,
+#main #refreshContainer .mui-pull-bottom-pocket .mui-pull .mui-pull-caption {
+  font-size: 0.15rem;
+  line-height: 0.24rem;
+}
+#main #refreshContainer .mui-pull-top-pocket .mui-pull .mui-pull-loading,
+#main #refreshContainer .mui-pull-bottom-pocket .mui-pull .mui-pull-loading {
+  font-size: 0.24rem;
+  margin-right: 0.1rem;
+}
+#main #refreshContainer .mui-pull-bottom-pocket {
+  height: 0.4rem;
 }
 #main .mui-content {
   background-color: #fff;
@@ -150,6 +167,7 @@ i {
 #main .searh-header .mui-input-row button {
   width: 0.6rem;
   height: 0.34rem;
+  font-size: 0.14rem;
   background-color: #006699;
   border-radius: 0.05rem;
   border-top-left-radius: 0;

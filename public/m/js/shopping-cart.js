@@ -2,10 +2,17 @@ $(document).ready(function(){
 
     renderPage(1,4);
     
+     // 请求之前show显示加载中效果 
+     $('.loading-box').show();
+   
+     // 请求完成后hide隐藏加载中效果
+     setTimeout(function(){
+         $('.loading-box').hide();
+     },1000);
      // 初始化页面上下滑动
      mui('#main>.mui-scroll-wrapper').scroll({
             deceleration: 0.0005, //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-            indicators: true,
+            indicators: false,
         });
 
     var remWidth =0.26667 * document.body.clientWidth;
@@ -97,17 +104,7 @@ $(document).ready(function(){
                     mui.toast('购物车还没有东西呢',{ duration:'long', type:'div' }); 
                 }
             },
-            beforeSend: function() {
-                // 请求之前show显示加载中效果 
-                $('.loading-box').show();
-            },
-            // ajax请求完成后的回调函数
-            complete: function() {
-                // 请求完成后hide隐藏加载中效果
-                setTimeout(function(){
-                    $('.loading-box').hide();
-                },1000)
-            },
+
         })
 
     }

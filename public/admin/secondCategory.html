@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐淘PC--后台主页</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="./less/secondCategory.css">
+</head>
+<body>
+    <!-- 主内容 -->
+    <main id="main">
+        <section id="left-nav">
+            <div class="user">
+                <div class="user-icon">
+                    <img src="./images/monkey.png" alt="..." class="img-circle">
+                </div>
+                <span class="user-name">马化腾</span>
+            </div>
+            <div class="nav">
+                <ul class="list-group">
+                    <a href="index.html" class="list-group-item">
+                        用户管理
+                      </a>
+                      <a class="list-group-item active" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">分类管理</a>
+                      
+                      <div class="collapse in" id="collapseExample">
+                        <div class="well">
+                            <div class="list-group">
+                                <a href="topCategory.html" class="list-group-item">
+                                  一级分类
+                                </a>
+                                <a href="secondCategory.html" class="list-group-item active">二级分类</a>
+                              </div>
+                        </div>
+                      </div>
+                      <a href="productManage.html" class="list-group-item">商品管理</a>
+                  </ul>
+            </div>
+        </section>
+        <section id="right-content">
+            <div class="content-title">
+                <div class="pull-left">
+                    <a href="#" class="fa fa-navicon"></a>
+                </div>
+                <div class="pull-right">
+                    <a href="javascript:void(0)" class="fa fa-sign-out logout"> 
+                        <span>退出</span>
+                    </a>
+                </div>
+            </div>
+            <div class="main-content">
+                <button type="button" class="btn btn-primary addBrand"  data-toggle="modal" data-target="#myModal">添加品牌</button>
+                <div class="table-box">
+                <table class="table table-bordered table-hover" >
+                    <thead>
+                        <tr>
+                            <th class="col-xs-2">品牌编号</th>
+                            <th class="col-xs-2">品牌名称</th>
+                            <th class="col-xs-3">品牌logo</th>
+                            <th class="col-xs-2">所属分类</th>
+                            <th class="col-xs-2">状态</th>
+                            <th class="col-xs-1">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <!-- <tr class="active">
+                            <td>
+                                <input type="checkbox" name="" id="">
+                            </td>
+                            <td>5</td>
+                            <td>
+                                李宁
+                            </td>
+                            <td>
+                                <img src="./images/course.png" alt="">
+                            </td>
+                            <td>
+                                男生馆
+                            </td>
+                        </tr> -->
+                    </tbody>
+                  </table>
+                </div>  
+                <div class="container">
+                    <div style="margin-top: 10px;">
+                        <ul id="page"></ul>
+                    </div>
+                </div>
+            </div>
+         <!-- Modal -->
+            <div class="modal fade" id="addBrand" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">添加品牌</h4>
+                    <div class="alert-message">
+                        <div class="alert alert-success" role="alert">666</div>
+                    </div>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" autocomplete="off">
+                            <div class="form-group">
+                              <label for="inputEmail3" class="col-sm-2 control-label">分类名称:</label>
+                              <div class="col-sm-10">
+                                <select name="category" class="form-control" id="inputCate">
+                                    <option value="1">1</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputIsdelete" class="col-sm-2 control-label">是否启用:</label>
+                                <div class="col-sm-10">
+                                  <select name="inputIsdelete" class="form-control" id="inputIsdelete">
+                                      <option value="1">启用</option>
+                                      <option value="0">禁用</option>
+                                  </select>                                
+                                </div>
+                              </div>
+                            <div class="form-group">
+                              <label for="inputBrand" class="col-sm-2 control-label">品牌名称:</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" name="brand" id="inputBrand" placeholder="请输入品牌名称">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputLogo" class="col-sm-2 control-label">品牌图片:</label>
+                              <div class="col-sm-10">
+                                <input type="file" class="form-control" id="inputLogo" name="pic1">
+                              </div>
+                            </div>
+                          </form>
+                          <div class="logo-display">
+                                <span class="upload-tips">分类图片还没上传!</span>
+                                <img src="./images/default.png" alt="">
+                          </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary btn-save">保存</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/nprogress/nprogress.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-paginator.js"></script>
+    <script id="tpl-tr" type="text/template">
+        {{ each rows value key}}
+        <tr class="{{key%2==0?'active':''}}">
+            <th>{{value['id']}}</th>
+            <td>
+                {{value['brandName']}}
+            </td>
+            <td>
+                <img src="{{value['brandLogo']}}" alt="">
+            </td>
+            <td>
+                {{value['categoryName']}}
+            </td>
+            <td>
+                {{value['isDelete']==1?'已启用':'禁用'}}
+            </td>
+            <td>
+                <button data-brandLogo="{{value['brandLogo']}}" data-categoryId="{{value['categoryId']}}" data-isDelete="{{value['isDelete']}}" data-brandName="{{value['brandName']}}" data-id="{{value['id']}}" class="btn btn-danger updateBrand">编辑</button>
+            </td>
+        </tr>
+        {{ /each }}
+    </script>
+    <!-- <script id="tpl-option" type="text/html">
+        {{ each rows value }}
+            <option value="{{value.id}}">{{value.categoryName}}</option>
+        {{ /each }}
+    </script> -->
+    <script src="./js/common.js"></script>
+    <script src="./js/secondCategory.js"></script>
+</body>
+</html>

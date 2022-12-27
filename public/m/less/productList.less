@@ -6,12 +6,25 @@
     position: relative;
     height: 100%;
     #refreshContainer {
-        .mui-scroll {
-            .mui-table-view {
-                &:before,&:after {
-                    height: 0;
+        .mui-pull-top-pocket,.mui-pull-bottom-pocket {
+            height: 0.5rem;
+            .mui-pull {
+                bottom: 0.1rem;
+                .mui-pull-caption {
+                    font-size: 0.15rem;
+                    line-height: 0.24rem;
+                }
+                .mui-pull-loading {
+                    font-size: 0.24rem;
+                    margin-right: 0.1rem;
                 }
             }
+        }
+        .mui-pull-bottom-pocket {
+            height: 0.4rem;
+        }
+        .mui-scroll {
+            
         }
     }
     .mui-content {
@@ -43,6 +56,7 @@
             button {
                 width: 0.6rem;
                 height: 0.34rem;
+                font-size: 0.14rem;
                 background-color: @cColor;
                 border-radius: .05rem;
                 border-top-left-radius: 0;

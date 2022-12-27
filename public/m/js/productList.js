@@ -7,12 +7,14 @@ $(function () {
   var searchArr =
     localStorage.getItem("searchArr") === null ? [] : JSON.parse(localStorage.getItem("searchArr"));
   
+    var remWidth = 0.26667*document.body.clientWidth;
+    console.log(remWidth);
   // 初始化下拉,上拉功能
   mui.init({
     pullRefresh: {
       container: "#refreshContainer", //下拉刷新容器标识，querySelector能定位的css选择器均可，比如：id、.class等
       down: {
-        height: '50', //可选,默认50.触发下拉刷新拖动距离,
+        height: 0.5*remWidth, //可选,默认50.触发下拉刷新拖动距离,
         auto: false, //可选,默认false.首次加载自动下拉刷新一次
         contentdown: "你可以下拉", //可选，在下拉可刷新状态时，下拉刷新控件上显示的标题内容
         contentover: "释放立即刷新", //可选，在释放可刷新状态时，下拉刷新控件上显示的标题内容
@@ -63,6 +65,7 @@ $(function () {
             proName: keyword 
             },
         success: function (res) {
+          console.log('上拉');
           var html = template("tpl-xs-6", res);
           $(".search-content-list .mui-row").html(html);
           mui("#refreshContainer")

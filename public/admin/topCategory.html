@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>乐淘PC--后台主页</title>
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./lib/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+    <link rel="stylesheet" href="./less/topCategory.css">
+</head>
+<body>
+    <!-- 主内容 -->
+    <main id="main">
+        <section id="left-nav">
+            <div class="user">
+                <div class="user-icon">
+                    <img src="./images/monkey.png" alt="..." class="img-circle">
+                </div>
+                <span class="user-name">马化腾</span>
+            </div>
+            <div class="nav">
+                <ul class="list-group">
+                    <a href="index.html" class="list-group-item">
+                        用户管理
+                      </a>
+                      <a class="list-group-item active" data-toggle="collapse" href="#collapseExample" aria-expanded="false" aria-controls="collapseExample">分类管理</a>
+                      
+                      <div class="collapse in" id="collapseExample">
+                        <div class="well">
+                            <div class="list-group">
+                                <a href="topCategory.html" class="list-group-item active">
+                                  一级分类
+                                </a>
+                                <a href="secondCategory.html" class="list-group-item">二级分类</a>
+                              </div>
+                        </div>
+                      </div>
+                      <a href="productManage.html" class="list-group-item">商品管理</a>
+                  </ul>
+            </div>
+        </section>
+        <section id="right-content">
+            <div class="content-title">
+                <div class="pull-left">
+                    <a href="#" class="fa fa-navicon"></a>
+                </div>
+                <div class="pull-right">
+                    <a href="javascript:void(0)" class="fa fa-sign-out logout"> 
+                        <span>退出</span>
+                    </a>
+                </div>
+            </div>
+            <!-- Modal addCategory-->
+            <div class="modal fade" id="addCategory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">添加分类</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="warning">
+                            <div class="alert alert-success" role="alert">添加成功</div>
+                        </div>
+                        <form class="form-horizontal" autocomplete="off">
+                            <div class="form-group">
+                              <label for="inputEmail3" class="col-sm-2 control-label">分类名称:</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputCate" placeholder="请输入分类名称">
+                              </div>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary btn-save1">保存</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- Modal updateCategory-->
+            <div class="modal fade" id="updateCategory" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">添加分类</h4>
+                    </div>
+                    <div class="modal-body">
+                        <div class="warning">
+                            <div class="alert alert-success" role="alert">添加成功</div>
+                        </div>
+                        <form class="form-horizontal" autocomplete="off">
+                            <div class="form-group">
+                              <label for="cateId" class="col-sm-2 control-label">分类id:</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="cateId" readonly>
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputCate" class="col-sm-2 control-label">分类名称:</label>
+                              <div class="col-sm-10">
+                                <input type="text" class="form-control" id="inputCate" placeholder="请输入分类名称">
+                              </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputDelete" class="col-sm-2 control-label">分类是否启用:</label>
+                              <div class="col-sm-10">
+                                <select name="isDelete" id="inputDelete" class="form-control">
+                                    <option value="0">禁用</option>
+                                    <option value="1">启用</option>
+                                </select>
+                              </div>
+                            </div>
+                          </form>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary btn-save2">保存</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <div class="main-content">
+                <button  type="button" class="btn btn-primary addCategory" data-toggle="modal" data-target="#addCategory">添加分类</button>
+                <div class="table-box">
+                <table class="table table-bordered table-hover" >
+                    <thead>
+                        <tr>
+                            <th class="col-xs-1">#</th>
+                            <th class="col-xs-3">分类编号</th>
+                            <th class="col-xs-4">分类名称</th>
+                            <th class="col-xs-2">状态</th>
+                            <th class="col-xs-2">操作</th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        
+                        <!-- <tr class="active">
+                            <td>1</td>
+                            <td>5</td>
+                            <td>番薯牌</td>
+                            <td>已启用</td>
+                            <td>
+                        <button type="button" class="btn btn-update btn-primary">禁用</button>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                  </table>
+                </div>  
+                <div class="container">
+                    <div style="margin-top: 10px;">
+                        <ul id="page"></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <script src="./lib/jquery/jquery.min.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="./lib/nprogress/nprogress.js"></script>
+    <script src="./lib/artTemplate/template-web.js"></script>
+    <script src="./lib/bootstrap/js/bootstrap-paginator.js"></script>
+    <script id="tpl-tr" type="text/html">
+        {{ each rows value key}}
+        <tr class="{{key%2==0?'active':''}}">
+            <th>{{key+1}}</th>
+            <td >{{value['id']}}</td>
+            <td >{{value['categoryName']}}</td>
+            <td >{{value['isDelete']==1?'已启用':'已禁用'}}</td>
+            <td>
+                <button type="button" data-catename="{{value['categoryName']}}" data-id="{{value['id']}}" data-isdelete="{{value['isDelete']}}" class="btn {{value['isDelete']==1?'btn-danger':'btn-success'}} btn-update">{{value['isDelete']==1?'禁用':'启用'}}</button>
+            </td>
+        </tr>
+       {{ /each }}
+    </script>
+    <script src="./js/common.js"></script>
+    <script src="./js/topCategory.js"></script>
+</body>
+</html>

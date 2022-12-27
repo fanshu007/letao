@@ -1,0 +1,182 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  outline: 0;
+  vertical-align: middle;
+}
+i {
+  font-style: normal;
+}
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+#main {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+#main #left-nav {
+  width: 200px;
+  height: 100%;
+  background-color: skyblue;
+}
+#main #left-nav .user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+#main #left-nav .user .user-icon {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 120px;
+  box-shadow: 0 0 5px 1px deeppink;
+}
+#main #left-nav .user .user-icon img {
+  width: 100px;
+}
+#main #left-nav .nav #collapseExample .well {
+  margin-bottom: 0;
+  border: none;
+  background-color: skyblue;
+}
+#main #left-nav .nav .list-group > .list-group-item.active {
+  background-color: deeppink ;
+  color: #fff;
+}
+#main #left-nav .nav .list-group-item {
+  border: none;
+  background-color: skyblue;
+}
+#main #left-nav .nav .list-group-item:hover {
+  background-color: deeppink ;
+  color: #fff;
+}
+#main #right-content {
+  flex: 1;
+  height: 100%;
+  overflow: scroll;
+  background-color: #f5f5f5;
+}
+#main #right-content .content-title {
+  height: 80px;
+  line-height: 40px;
+  padding: 20px;
+  font-size: 20px;
+  background: #fff;
+}
+#main #right-content .content-title .pull-left a {
+  width: 37px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  background-color: yellowgreen;
+  color: #fff;
+}
+#main #right-content .main-content {
+  padding: 15px;
+}
+#main #right-content .main-content .table-box {
+  min-height: 300px;
+}
+#main #right-content .main-content table {
+  background-color: #fff;
+}
+#main #right-content .main-content table tr,
+#main #right-content .main-content table th {
+  text-align: center;
+}
+#main #right-content .main-content table tbody tr td,
+#main #right-content .main-content table tbody tr th {
+  line-height: 35px;
+}
+#main #right-content .main-content .container {
+  width: 100%;
+}
+#main #right-content .main-content .container #page li a {
+  margin-bottom: 10px;
+}
+#main #right-content .main-content .container #page li a:hover {
+  cursor: pointer;
+}
+#main #right-content .main-content .container #page li span:hover {
+  cursor: pointer;
+}
+#main #right-content .main-content .table tbody td,
+#main #right-content .main-content .table tbody th {
+  line-height: 35px;
+}
+#main #right-content .main-content .table tbody td {
+  overflow: hidden;
+  max-width: 60px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+#main #right-content .main-content .table tbody img {
+  max-height: 84px;
+  max-width: 90px;
+}
+#main .modal-header {
+  position: relative;
+}
+#main .modal-header .alert-message {
+  position: absolute;
+  top: 2px;
+  left: 95px;
+  width: 400px;
+  height: 52px;
+}
+#main .modal-header .alert-message .alert {
+  display: none;
+}
+#main .modal-body form {
+  margin-bottom: 210px;
+}
+#main .modal-body form .form-group {
+  margin-bottom: 10px;
+  margin-right: 10px;
+}
+#main .modal-body form #inputSize1,
+#main .modal-body form #inputSize2 {
+  width: 140px;
+}
+#main .modal-body .logo-display {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translate(-50%, 0);
+  width: 200px;
+  height: 200px;
+}
+#main .modal-body .logo-display img {
+  width: 100%;
+  height: 100%;
+}
+#main .modal-body .logo-display .upload-tips {
+  position: absolute;
+  bottom: 0;
+  right: -125px;
+}

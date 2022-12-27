@@ -112,6 +112,9 @@ i {
 #footer .mui-content a span {
   line-height: 0.16rem;
 }
+#main {
+  height: 100%;
+}
 #main .mui-input-group > div {
   height: 0.4rem;
 }

@@ -1,5 +1,13 @@
 $(document).ready(function(){
 
+    
+     // 请求之前show显示加载中效果 
+     $('.loading-box').show();
+    
+    // 请求完成后hide隐藏加载中效果
+    setTimeout(function(){
+        $('.loading-box').hide();
+    },1000);
     // 点击登录
     $('.btn-login').on('tap',function(){
         var userName = $('input[name=userName]').val().trim();

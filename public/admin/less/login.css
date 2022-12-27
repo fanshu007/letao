@@ -1,0 +1,78 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+img {
+  outline: 0;
+  vertical-align: middle;
+}
+i {
+  font-style: normal;
+}
+.clearfix::after {
+  content: ".";
+  display: block;
+  height: 0;
+  visibility: hidden;
+  clear: both;
+}
+.clearfix {
+  *zoom: 1;
+}
+html,
+body {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body {
+  background-color: #2f4050;
+}
+#main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+#main .alert {
+  display: none;
+  font-weight: 600;
+}
+#main form {
+  position: relative;
+  width: 500px;
+  height: 360px;
+  padding: 70px 30px 10px;
+  border-radius: 10px;
+  background-color: #fff;
+}
+#main form .user-icon {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  left: 50%;
+  top: -70px;
+  transform: translate(-50%, 0);
+  margin-bottom: 10px;
+  background-color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 120px;
+  box-shadow: 0 0 5px 1px deeppink;
+}
+#main form .user-icon img {
+  width: 100px;
+}
+#main form .returnMessage {
+  height: 72px;
+}
+#main form #loginBtn {
+  text-align: center;
+  color: #fff;
+  background-color: deeppink;
+  border-color: deeppink;
+}
