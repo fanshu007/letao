@@ -128,6 +128,7 @@ function updateProduct() {
         var statu = $('#inputStatus').val().trim();
         var num = $('#inputNum').val().trim();
         var brandId = $('#inputBrandId').val().trim();
+        // 这个数据上传会成功,但是数据库找不到数据
         var tempImgname = "041cb210-85f3-11ed-89fb-89e30bdf3f5c.jpeg";
         var pic = [
             {"picName":tempImgname,"picAddr":"/upload/brand/"+tempImgname},

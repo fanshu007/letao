@@ -22,7 +22,7 @@ $(function () {
         callback: pullFreshDown, //必选，刷新函数，根据具体业务来编写，比如通过ajax从服务器获取新数据；
       },
       up: {
-        height: 50, //可选.默认50.触发上拉加载拖动距离
+        height: 0.5*remWidth, //可选.默认50.触发上拉加载拖动距离
         auto: false, //可选,默认false.自动上拉加载一次
         contentrefresh: "老夫正在加载...", //可选，正在加载状态时，上拉加载控件上显示的标题内容
         contentnomore: "老夫是有底线的...", //可选，请求完毕若没有更多数据时显示的提醒内容；
@@ -42,10 +42,11 @@ $(function () {
             proName: keyword 
         },
         success: function (res) {
+          pageSize = 2;
           var html = template("tpl-xs-6", res);
           $(".search-content-list .mui-row").html(html);
           mui("#refreshContainer").pullRefresh().endPulldownToRefresh();
-        //   mui("#refreshContainer").pullRefresh().refresh(true);
+          mui('#refreshContainer').pullRefresh().refresh(true);
           console.log("下拉完成");
         },
       });
